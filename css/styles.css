@@ -656,6 +656,10 @@ a:focus-visible, button:focus-visible {
 .foot nav a:hover { text-decoration: underline; text-decoration-color: var(--stamp); }
 .foot .place { margin-top: 8px; font-size: 12px; color: rgba(90, 84, 75, .6); letter-spacing: .04em; }
 
+.logo img, #navbar .brand img, .mm-head img {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+}
 /* Sticky CTA — full-width bar, text must fit narrow phones */
 #sticky-cta {
   display: none;
