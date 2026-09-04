@@ -7,6 +7,10 @@ html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body {
+  overflow-x: clip;
+  max-width: 100%;
+}
 body {
   font-family: var(--font-body);
   font-size: 17px;
@@ -250,7 +254,12 @@ a:focus-visible, button:focus-visible {
 }
 
 /* Mobile menu — SIBLING of nav. No backdrop-filter. */
-#mobile-menu { z-index: 55; }
+#mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  overflow: hidden;
+}
 #mobile-menu.is-closed { pointer-events: none; visibility: hidden; }
 #mobile-menu.is-open { pointer-events: auto; visibility: visible; }
 .mm-bg {
@@ -668,7 +677,6 @@ a:focus-visible, button:focus-visible {
   z-index: 40;
   box-sizing: border-box;
   width: 100%;
-  max-width: 100vw;
   background: var(--wood);
   border-top: 1px solid rgba(28, 26, 23, .2);
   padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
